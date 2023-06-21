@@ -3,25 +3,23 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 /*** 
- * `quotes` array 
+ * Creating the 'quotes' array and the objects that will be contained within it
 ***/
 const quotes = [
   {
     quote: "If my life is going to mean anything, I have to live it myself.", 
     source: "Rick Riordan", 
     citation: "The Lightning Thief", 
-    year: 2005 
+    year: 2005,
+    medium: "Book" 
   },
   {
     quote: "It is not this day.", 
     source: "J.R.R. Tolkien", 
     citation: "The Return of the King", 
-    year: 1955
+    year: 1955,
+    medium: "Book"
   },
   {
     quote: "That's one small step for a man, a giant leap for mankind.", 
@@ -32,19 +30,21 @@ const quotes = [
     quote: "Dedication is a talent all on its own", 
     source: "Alphonse Elric", 
     citation: "Full Metal Alchemist: Brotherhood", 
-    year: 2009
+    year: 2009,
+    medium: "Anime"
   },
   {
     quote: "No matter what people tell you, words and ideas can change the world", 
     source: "Robin Williams", 
     citation: "Dead Poets Society", 
-    year: 1989
+    year: 1989,
+    medium: "Movie"
   }
 ];
 
 
 /***
- * `getRandomQuote` function
+ * The 'getRandomQuote' function generates a random number that is used as an index value to return an object from the 'quotes' array
 ***/
 function getRandomQuote (quotes) {
   let randomNumber = Math.floor(Math.random() * quotes.length);
@@ -53,7 +53,7 @@ function getRandomQuote (quotes) {
 
 
 /***
- * `printQuote` function
+ * Creating the 'printQuote' function. This builds a string of html based on conditional statements that gets displayed on the web page
 ***/
 function printQuote () {
   let randomQuote = getRandomQuote(quotes);
@@ -67,15 +67,19 @@ function printQuote () {
   if (randomQuote.year !== undefined) {
     html += `<span class="year"> ${randomQuote.year} </span>`;
   }
+  if (randomQuote.medium !== undefined) {
+    html += `<span class="medium"> ${randomQuote.medium} </span>`;
+  }
   html += `</p>`
   document.getElementById('quote-box').innerHTML = html;
 }
 
 
+// setInterval function that changes the quote on the page every ten seconds
 setInterval(printQuote, 10000);
 
 /***
- * click event listener for the print quote button
+ * Code provided with project by TeamTreehouse staff to create a click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
