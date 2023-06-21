@@ -10,13 +10,45 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-
+const quotes = [
+  {
+    quote: "If my life is going to mean anything, I have to live it myself.", 
+    source: "Rick Riordan", 
+    citation: "The Lightning Thief", 
+    year: 2005 
+  },
+  {
+    quote: "It is not this day.", 
+    source: "J.R.R. Tolkien", 
+    citation: "The Return of the King", 
+    year: 1955
+  },
+  {
+    quote: "That's one small step for a man, a giant leap for mankind.", 
+    source: "Neil Armstrong", 
+    year: 1969
+  },
+  {
+    quote: "Dedication is a talent all on its own", 
+    source: "Alphonse Elric", 
+    citation: "Full Metal Alchemist: Brotherhood", 
+    year: 2009
+  },
+  {
+    quote: "No matter what people tell you, words and ideas can change the world", 
+    source: "Robin Williams", 
+    citation: "Dead Poets Society", 
+    year: 1989
+  }
+];
 
 
 /***
  * `getRandomQuote` function
 ***/
-
+function getRandomQuote () {
+  
+}
 
 
 /***
