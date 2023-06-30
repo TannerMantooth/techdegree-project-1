@@ -43,6 +43,14 @@ const quotes = [
 ];
 
 
+function backgroundColor() {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  let randomNumber = `rgb(${x}, ${y}, ${z})`;
+  document.body.style.background = randomNumber;
+}
+
 /***
  * The 'getRandomQuote' function generates a random number that is used as an index value to return an object from the 'quotes' array
 ***/
@@ -72,6 +80,7 @@ function printQuote () {
   }
   html += `</p>`
   document.getElementById('quote-box').innerHTML = html;
+  backgroundColor();
 }
 
 
